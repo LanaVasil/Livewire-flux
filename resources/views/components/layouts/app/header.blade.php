@@ -13,15 +13,15 @@
 
             <flux:navbar class="-mb-px max-lg:hidden">
                 <flux:navbar.item icon="layout-grid" :href="route('dashboard')" :current="request()->routeIs('dashboard')" wire:navigate>
-                    {{ __('Dashboard') }}
+                    {{ __('Напрямки') }}
                 </flux:navbar.item>
             </flux:navbar>
 
             <flux:spacer />
 
-            <flux:navbar class="me-1.5 space-x-0.5 rtl:space-x-reverse py-0!">
+            {{-- <flux:navbar class="me-1.5 space-x-0.5 rtl:space-x-reverse py-0!">
                 @include('partials.theme')
-            </flux:navbar>
+            </flux:navbar> --}}
 
             <!-- Desktop User Menu -->
             <flux:dropdown position="top" align="end">
@@ -54,6 +54,14 @@
 
                     <flux:menu.radio.group>
                         <flux:menu.item :href="route('settings.profile')" icon="cog" wire:navigate>{{ __('Settings') }}</flux:menu.item>
+                    </flux:menu.radio.group>
+
+                    <flux:menu.separator />
+
+                    <flux:menu.radio.group>
+                        <flux:menu.item wire:navigate>
+                            @include('partials.theme')
+                        </flux:menu.item>
                     </flux:menu.radio.group>
 
                     <flux:menu.separator />
